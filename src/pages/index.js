@@ -14,6 +14,21 @@ const BlogIndex = ({ data, location }) => {
     <Layout location={location} title={siteTitle}>
       <SEO title="All posts" />
       <Bio />
+
+      <h2>Daily Notes</h2>
+      <p>
+        This is my{" "}
+        <a
+          href="https://www.swyx.io/writing/learn-in-public/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          learning in public
+        </a>
+        {" journal."}
+        <br /> Also a fun way to practice consistency and develop my written
+        voice.
+      </p>
       {posts.map(({ node }) => {
         const title = node.frontmatter.title || node.fields.slug
         return (

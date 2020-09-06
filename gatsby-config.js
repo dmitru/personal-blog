@@ -1,14 +1,18 @@
 module.exports = {
   siteMetadata: {
-    title: `Dmitry Borody`,
+    title: `Dmitry Borody – web engineer, UX designer, maker.`,
     author: {
       name: `Dmitry Borody`,
-      summary: `– UX designer, full-stack web developer and maker from Vancouver, Canada.`,
     },
     description: `A starter blog demonstrating what Gatsby can do.`,
     siteUrl: `https://dmitryborody.com/`,
     social: {
-      twitter: `dmitry_borody`,
+      twitter: `https://twitter.com/dmitry_borody`,
+      linkedin: "https://www.linkedin.com/in/dmitriyborodiy/",
+      github: "https://github.com/dmitru",
+      medium: "https://medium.com/@dmitriy.borodiy/",
+      indiehackers: "https://www.indiehackers.com/DmitryBorody",
+      producthunt: "https://www.producthunt.com/@dmitru",
     },
   },
   plugins: [

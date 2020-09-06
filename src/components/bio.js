@@ -8,15 +8,33 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Image from "gatsby-image"
+import {
+  FaTwitter,
+  FaProductHunt,
+  FaGithub,
+  FaLinkedin,
+  FaMedium,
+} from "react-icons/fa"
 
 import { rhythm } from "../utils/typography"
+
+const SocialLink = ({ to, children }) => (
+  <a
+    href={to}
+    target="_blank"
+    rel="noreferrer"
+    style={{ color: "#666", fontSize: "26px", marginRight: rhythm(1 / 2) }}
+  >
+    {children}
+  </a>
+)
 
 const Bio = () => {
   const data = useStaticQuery(graphql`
     query BioQuery {
       avatar: file(absolutePath: { regex: "/profile-pic.jpg/" }) {
         childImageSharp {
-          fixed(width: 50, height: 50) {
+          fixed(width: 90, height: 90) {
             ...GatsbyImageSharpFixed
           }
         }
@@ -25,10 +43,12 @@ const Bio = () => {
         siteMetadata {
           author {
             name
-            summary
           }
           social {
             twitter
+            producthunt
+            linkedin
+            github
           }
         }
       }
@@ -47,22 +67,39 @@ const Bio = () => {
         fixed={data.avatar.childImageSharp.fixed}
         alt={author.name}
         style={{
-          marginRight: rhythm(1 / 2),
+          marginRight: rhythm(1),
           marginBottom: 0,
-          minWidth: 50,
+          minWidth: 90,
           borderRadius: `100%`,
         }}
         imgStyle={{
           borderRadius: `50%`,
         }}
       />
-      <p>
-        Written by <strong>{author.name}</strong> {author.summary}
-        {` `}
-        <a href={`https://twitter.com/${social.twitter}`}>
-          Follow me on Twitter
-        </a>
-      </p>
+
+      <div>
+        <p style={{ fontSize: "1.2rem" }}>
+          👋 Hi, I'm Dmitry – a full-stack web developer, UX designer and maker
+          from Vancouver, Canada.
+        </p>
+        <div style={{ display: "flex", alignItems: "center" }}>
+          <SocialLink to={social.twitter}>
+            <FaTwitter />
+          </SocialLink>
+          <SocialLink to={social.github}>
+            <FaGithub />
+          </SocialLink>
+          <SocialLink to={social.linkedin}>
+            <FaLinkedin />
+          </SocialLink>
+          <SocialLink to={social.producthunt}>
+            <FaProductHunt />
+          </SocialLink>
+          <SocialLink to={social.medium}>
+            <FaMedium />
+          </SocialLink>
+        </div>
+      </div>
     </div>
   )
 }
