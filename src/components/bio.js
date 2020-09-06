@@ -6,7 +6,7 @@
  */
 
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql, Link } from "gatsby"
 import Image from "gatsby-image"
 import {
   FaTwitter,
@@ -79,25 +79,43 @@ const Bio = () => {
 
       <div>
         <p style={{ fontSize: "1.2rem" }}>
-          👋 Hi, I'm Dmitry – a full-stack web developer, UX designer and maker
-          from Vancouver, Canada.
+          👋 Hi, I'm Dmitry – full-stack web developer, UX designer and maker
+          based in Vancouver, Canada.
         </p>
-        <div style={{ display: "flex", alignItems: "center" }}>
-          <SocialLink to={social.twitter}>
-            <FaTwitter />
-          </SocialLink>
-          <SocialLink to={social.github}>
-            <FaGithub />
-          </SocialLink>
-          <SocialLink to={social.linkedin}>
-            <FaLinkedin />
-          </SocialLink>
-          <SocialLink to={social.producthunt}>
-            <FaProductHunt />
-          </SocialLink>
-          <SocialLink to={social.medium}>
-            <FaMedium />
-          </SocialLink>
+
+        <div
+          style={{
+            marginLeft: "auto",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "flex-end",
+          }}
+        >
+          <Link to="/about">About</Link>
+          <div
+            style={{
+              marginLeft: "auto",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "flex-end",
+            }}
+          >
+            <SocialLink to={social.twitter}>
+              <FaTwitter />
+            </SocialLink>
+            <SocialLink to={social.github}>
+              <FaGithub />
+            </SocialLink>
+            <SocialLink to={social.linkedin}>
+              <FaLinkedin />
+            </SocialLink>
+            <SocialLink to={social.producthunt}>
+              <FaProductHunt />
+            </SocialLink>
+            <SocialLink to={social.medium}>
+              <FaMedium />
+            </SocialLink>
+          </div>
         </div>
       </div>
     </div>

@@ -15,22 +15,35 @@ const BlogIndex = ({ data, location }) => {
       <SEO title="All posts" />
       <Bio />
 
-      <h2>Daily Notes</h2>
       <p>
-        This is my{" "}
+        For the last 7+ years I've been helping small companies and startups to
+        solve their problems, build MVPs, launch new products and increase
+        revenue.
+      </p>
+      <p>
+        I specialize in building APIs and SPAs with rich user interfaces using
+        TypeScript, React and Node.js.
+      </p>
+
+      <h2>Writing: Quick Bits</h2>
+      <p>
+        A place for my short-form writing, mostly to{" "}
         <a
           href="https://www.swyx.io/writing/learn-in-public/"
           target="_blank"
           rel="noreferrer"
         >
-          learning in public
+          learn in public
         </a>
-        {" journal."}
-        <br /> Also a fun way to practice consistency and develop my written
-        voice.
+        , share the journey and personal opinions. Also a fun way to practice
+        consistency, develop my written voice and thinking.
       </p>
-      {posts.map(({ node }) => {
-        const title = node.frontmatter.title || node.fields.slug
+
+      {posts.map(({ node }, index) => {
+        let title = node.frontmatter.title || node.fields.slug
+
+        title = `Quick Bit #${posts.length - index}: ${title}`
+
         return (
           <article key={node.fields.slug}>
             <header>

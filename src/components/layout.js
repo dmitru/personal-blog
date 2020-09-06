@@ -8,7 +8,7 @@ const Layout = ({ location, title, children }) => {
   const aboutPath = `${__PATH_PREFIX__}/about/`
   let header
 
-  if (location.pathname === rootPath || location.pathname === aboutPath) {
+  if (location.pathname === rootPath) {
     // DO NOTHING
   } else {
     header = (
@@ -40,11 +40,11 @@ const Layout = ({ location, title, children }) => {
     >
       <header>{header}</header>
       <main>{children}</main>
-      <footer>
+      {/* <footer>
         ©2020, Built with
         {` `}
         <a href="https://www.gatsbyjs.org">Gatsby</a>
-      </footer>
+      </footer> */}
     </div>
   )
 }

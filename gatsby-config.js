@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Dmitry Borody – web engineer, UX designer, maker.`,
+    title: `Dmitry Borody – web developer, UX designer, maker.`,
     author: {
       name: `Dmitry Borody`,
     },

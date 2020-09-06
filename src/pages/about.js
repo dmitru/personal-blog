@@ -7,7 +7,7 @@ import SEO from "../components/seo"
 import { rhythm } from "../utils/typography"
 
 const Index = ({ data, location }) => {
-  const { author, title: siteTitle } = data.site.siteMetadata
+  const { author, title: siteTitle, social } = data.site.siteMetadata
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -43,12 +43,45 @@ const Index = ({ data, location }) => {
             increase revenue.
           </p>
           <p>
-            I specialize in building APIs and SPAs with rich user interfaces.
+            I specialize in building APIs and SPAs with rich user interfaces
+            using TypeScript, React and Node.js.
           </p>
           <p>
-            The tech stack I'm most experienced with:
-            <br />
-            React, TypeScript, MobX/Redux, NodeJS, Rust/WebAssembly
+            Here's the <strong>tech stack</strong> I'm being the most productive
+            with:
+          </p>
+
+          <ul>
+            <li>
+              <strong>Frontend:</strong> TypeScript, React, NextJS, Gatsby,
+              MobX/Redux, Rust/WebAssembly, HTML Canvas
+            </li>
+            <li>
+              <strong>HTML/CSS:</strong> responsive design, css-in-js, SCSS
+            </li>
+            <li>
+              <strong>Backend:</strong> Node, NestJS,
+              Mongoose/Sequelize/TypeORM, Python/Flask
+            </li>
+            <li>
+              <strong>Databases:</strong> Postgres, MongoDB, Redis, Firebase
+            </li>
+            <li>
+              <strong>Cloud / infrastructure:</strong> AWS S3/EC2/RDS, Docker,
+              Ansible, Nginx, Linux administration
+            </li>
+            <li>
+              <strong>3rd party services:</strong> Stripe, Google Analytics,
+              Sentry, Metabase, SendGrid, Graylog
+            </li>
+          </ul>
+
+          <p>
+            For my work experience and testimonials, please check out my{" "}
+            <a href={social.linkedin} target="_blank" rel="noreferrer">
+              Linkedin profile
+            </a>
+            .
           </p>
         </div>
       </div>
@@ -72,6 +105,9 @@ export const pageQuery = graphql`
         title
         author {
           name
+        }
+        social {
+          linkedin
         }
       }
     }
