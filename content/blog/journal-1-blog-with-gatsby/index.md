@@ -6,8 +6,6 @@ description: "Exploring my motivation for writing and starting this blog"
 
 ## Intro
 
-![Hopper The Rabbit](./rabbit-friend.png)
-
 Hi, I'm Dmitry – nice to meet you! If you'd like to know me better, read [about me](/about).
 
 In this first post, I'm exploring my motivation for writing and starting this blog.
