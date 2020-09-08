@@ -25,7 +25,7 @@ const BlogIndex = ({ data, location }) => {
         TypeScript, React and Node.js.
       </p>
 
-      <h2>Writing: Quick Bits</h2>
+      <h2>Journal</h2>
       <p>
         A place for my short-form writing, mostly to{" "}
         <a

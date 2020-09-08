@@ -83,6 +83,8 @@ const Index = ({ data, location }) => {
             </a>
             .
           </p>
+
+          <p>TODO: write a short intro story, make it personal</p>
         </div>
       </div>
     </Layout>

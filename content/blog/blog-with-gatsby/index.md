@@ -4,17 +4,20 @@ date: "2020-09-06 13:44:28"
 description: "Exploring my motivation for writing and starting this blog"
 ---
 
-Hi, I'm Dmitry – nice to meet you! Read [my story](/about) if you'd like to know me better.
+## Intro
 
-> TODO: write that story
+Hi, I'm Dmitry – nice to meet you! If you'd like to know me better, read [about me](/about).
 
-In this first Quick Bit, I'm exploring my motivation for writing and starting this blog.
+In this first post, I'm exploring my motivation for writing and starting this blog.
 
 The thing is, I've been drawn to writing for a while, and finally with a helpful motivation kick from [Blogging for devs](http://bloggingfordevs.com/) I got down to it.
 
-To start, I decided to go with a short-form series of "Quick Bits", where I expect to write about my personal journey in the world of tech, web, making and maybe a few other related topics. Some of this stuff may get personal and opinionated – that's by design.
+To start, I decided to go with a short-form journal format.
+I expect to write about my personal journey in the world of tech, web, making and maybe a few other related topics.
 
-So why write?
+Some of this stuff may get personal and opinionated – that's by design!
+
+## So why write?
 
 In writing, I can see a lot of value for my long-term personal growth:
 
