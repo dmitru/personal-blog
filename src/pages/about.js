@@ -46,6 +46,15 @@ const Index = ({ data, location }) => {
             I specialize in building APIs and SPAs with rich user interfaces
             using TypeScript, React and Node.js.
           </p>
+
+          <p>
+            I'm currently building{" "}
+            <a href="https://inkarnate.com" target="_blank" rel="noreferrer">
+              Inkarnate
+            </a>{" "}
+            – online fantasy maps editor for DND & board games community.
+          </p>
+
           <p>
             Here's the <strong>tech stack</strong> I'm being the most productive
             with:

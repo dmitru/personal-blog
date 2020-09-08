@@ -25,6 +25,14 @@ const BlogIndex = ({ data, location }) => {
         TypeScript, React and Node.js.
       </p>
 
+      <p>
+        Currently building{" "}
+        <a href="https://inkarnate.com" target="_blank" rel="noreferrer">
+          Inkarnate
+        </a>{" "}
+        – online fantasy maps editor for DND & board games community.
+      </p>
+
       <h2>Journal</h2>
       <p>
         A place for my short-form writing, mostly to{" "}
