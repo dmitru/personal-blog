@@ -42,7 +42,7 @@ const BlogIndex = ({ data, location }) => {
       {posts.map(({ node }, index) => {
         let title = node.frontmatter.title || node.fields.slug
 
-        title = `Quick Bit #${posts.length - index}: ${title}`
+        title = `Entry #${posts.length - index}: ${title}`
 
         return (
           <article key={node.fields.slug}>
