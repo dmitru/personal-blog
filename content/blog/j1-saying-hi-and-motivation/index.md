@@ -6,8 +6,6 @@ description: "Exploring my motivation for writing and starting this blog"
 
 ## Intro
 
-Hi, I'm Dmitry – nice to meet you! If you'd like to know me better, read [about me](/about).
-
 In this first post, I'm exploring my motivation for writing and starting this blog.
 
 The thing is, I've been drawn to writing for a while, and finally with a helpful motivation kick from [Blogging for devs](http://bloggingfordevs.com/) I got down to it.

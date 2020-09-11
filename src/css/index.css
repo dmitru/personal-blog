@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  a {
+    @apply text-blue-600;
+
+    &:hover {
+      @apply text-teal-600;
+    }
+  }
+
+  ul {
+    list-style: disc;
+  }
+  ol {
+    list-style: decimal;
+  }
+
+  ul,
+  ol {
+    @apply my-6 pl-5;
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply mt-4;
+  }
+
+  h1 {
+    @apply text-2xl;
+  }
+
+  h2 {
+    @apply text-xl;
+  }
+
+  h3 {
+    @apply text-lg;
+  }
+
+  p {
+    @apply my-4;
+  }
+}
