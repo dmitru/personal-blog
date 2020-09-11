@@ -1,33 +1,8 @@
 import React from "react"
-import { Link, graphql, useStaticQuery } from "gatsby"
-import Image from "gatsby-image"
+import { Link, graphql } from "gatsby"
 
-import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { rhythm } from "../utils/typography"
-
-const ShortAbout = ({ avatarSrc }) => {
-  return (
-    <>
-      <p>
-        <Image
-          fixed={avatarSrc}
-          alt="Avatar"
-          style={{
-            marginRight: rhythm(1),
-            marginBottom: 0,
-            minWidth: 90,
-            borderRadius: `100%`,
-          }}
-          imgStyle={{
-            borderRadius: `50%`,
-          }}
-        />
-      </p>
-    </>
-  )
-}
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title
@@ -35,8 +10,7 @@ const BlogIndex = ({ data, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <SEO title="All posts" />
-      <ShortAbout avatarSrc={data.avatar.childImageSharp.fixed} />
+      <SEO title="Dmitry Borody – Full-stack React, Node.js developer, contract and freelance" />
 
       <div className="max-w-lg">
         <p>
@@ -111,7 +85,7 @@ export const pageQuery = graphql`
   query {
     avatar: file(absolutePath: { regex: "/profile-pic.jpg/" }) {
       childImageSharp {
-        fixed(width: 90, height: 90) {
+        fixed(width: 120, height: 120) {
           ...GatsbyImageSharpFixed
         }
       }
