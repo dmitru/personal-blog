@@ -1,1 +1,3 @@
-module.exports = () => ({ plugins: [require("tailwindcss")] })
+module.exports = () => ({
+  plugins: [require("postcss-nested"), require("tailwindcss")],
+})

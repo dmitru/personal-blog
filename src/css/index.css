@@ -3,11 +3,45 @@
 @tailwind utilities;
 
 @layer base {
+  body {
+    @apply bg-gray-900 min-h-screen;
+  }
+
   a {
-    @apply text-blue-600;
+    @apply text-gray-600;
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    z-index: 1;
+
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      z-index: -1;
+      border-radius: 8px;
+      height: 100%;
+      width: 100%;
+      box-sizing: content-box;
+      top: -0.25em;
+      left: -0.25em;
+      padding: 0.25em;
+      @apply bg-gray-300;
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+
+    &:not(.no-hover-effect) {
+      &:hover {
+        &::before {
+          opacity: 1;
+        }
+      }
+    }
 
     &:hover {
-      @apply text-teal-600;
+      @apply text-gray-800;
+      text-decoration: none;
     }
   }
 
@@ -20,13 +54,19 @@
 
   ul,
   ol {
-    @apply my-6 pl-5;
+    @apply my-6 pl-3 ml-3;
+
+    > ul {
+      @apply pl-3 ml-3;
+    }
   }
 
   h1,
   h2,
   h3 {
-    @apply mt-4;
+    @apply mt-6;
+    @apply mb-3;
+    border: none;
   }
 
   h1 {

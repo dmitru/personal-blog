@@ -11,6 +11,7 @@ const Index = ({ data, location }) => {
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="About" />
+
       <div
         style={{
           // display: `flex`,
@@ -25,12 +26,13 @@ const Index = ({ data, location }) => {
             borderRadius: `20%`,
           }}
         />
+
         <div>
-          <h1 className="text-2xl">👋 I'm Dmitry – nice to meet you!</h1>
+          <h1 className="text-2xl">Intro</h1>
           <p>
             Currently, I specialize in building APIs and SPAs with rich user
             interfaces using TypeScript, React and Node.js. I'm interested in
-            UX, product design and bootstrapping.
+            UX, product design and indie bootstrapping.
           </p>
           <p>
             Recently, I've been working as a senior web developer at{" "}
@@ -57,34 +59,18 @@ const Index = ({ data, location }) => {
             >
               freelancing
             </a>{" "}
-            and slow-traveling for 3 years, livinig in over 25 countries,
-            co-living and co-working with some wonderful people.
+            and slow-traveling for 3 years in over 25 countries, co-living and
+            co-working with some wonderful people.
           </p>
 
-          <p>
-            {"I normally spend my free time "}
-            <a
-              href="https://soundcloud.com/charmonium"
-              target="_blank"
-              rel="noreferrer"
-            >
-              improvising on an instrument (mostly guitars)
-            </a>
-            , reading and hiking.
-          </p>
+          <h2>Let's work together!</h2>
 
           <p>
-            Random fact: in my reckless youth in Russia, I was an illegal
-            graffiti artist.
-          </p>
-
-          <p className="mt-10">
-            <strong>
-              I'm generally open for part-time contracting opportunities.
-            </strong>
+            <strong>I might be open for contracting.</strong>
           </p>
           <p>
-            If you'd like to discuss a project or hire me, send me an email or{" "}
+            If you'd like to discuss a project, get a quote or work with me,
+            send me an email or{" "}
             <a
               href="https://twitter.com/messages/compose?recipient_id=1232342065360637952"
               target="_blank"
@@ -100,13 +86,12 @@ const Index = ({ data, location }) => {
           </p>
 
           <p className="mt-10">
-            My current <strong>tech stack</strong> I'm being the most productive
-            with:
+            My current <strong>tech stack</strong> I'm the most productive with:
           </p>
 
           <ul>
             <li>
-              <strong>Frontend:</strong> TypeScript, React, NextJS, Gatsby,
+              <strong>Frontend:</strong> TypeScript, React, Next.js, Gatsby,
               MobX/Redux, Rust/WebAssembly, HTML Canvas
             </li>
             <li>
@@ -128,6 +113,45 @@ const Index = ({ data, location }) => {
               Sentry, Metabase, SendGrid, Graylog
             </li>
           </ul>
+
+          <h2>My Interests</h2>
+          <ul>
+            <li>
+              Tech domains:
+              <ul>
+                <li>UI/UX/Graphical design tools</li>
+                <li>Dev experience & productivity</li>
+                <li>Crafting great UIs and UX</li>
+                <li>Performance, profiling & optimization</li>
+                <li>All things web, TypeScript, Rust/WebAssembly</li>
+                <li>Serverless</li>
+              </ul>
+            </li>
+            <li>
+              Non-tech:
+              <ul>
+                <li>UI/UX/Graphical design tools</li>
+                <li>Dev experience & productivity</li>
+                <li>Crafting great UIs and UX</li>
+                <li>Performance, profiling & optimization</li>
+                <li>Serverless</li>
+              </ul>
+            </li>
+          </ul>
+
+          <p>
+            {"I like spending my free time "}
+            <a
+              href="https://soundcloud.com/charmonium"
+              target="_blank"
+              rel="noreferrer"
+            >
+              improvising on an instrument (mostly bass and guitar)
+            </a>
+            , reading and hiking.
+          </p>
+
+          <p>Random fact: in my reckless youth, I was a graffiti artist.</p>
         </div>
       </div>
     </Layout>

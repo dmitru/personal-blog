@@ -5,40 +5,58 @@ import {
   FaGithub,
   FaLinkedin,
   FaMedium,
+  FaHome,
 } from "react-icons/fa"
+import { MdLocationOn } from "react-icons/md"
 import { Link, useStaticQuery, graphql } from "gatsby"
 
-const WidthContainer = props => (
-  <div className="px-5 max-w-xl mx-auto" {...props} />
-)
+const WidthContainer = props => <div className="px-5 mx-auto" {...props} />
+
+const NavWidthContainer = props => <div className="px-5  mx-auto" {...props} />
 
 const NavLink = props => (
   <Link
-    href="#responsive-header"
-    className="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-teal-600 mr-4"
+    className="block text-xl my-3 lg:inline-block lg:mt-0  mr-4"
     {...props}
   />
 )
 
-const Nav = () => (
-  <WidthContainer>
-    <nav className="flex items-center justify-between flex-wrap py-6">
-      <div className="flex items-center flex-shrink-0 text-gray-800 mr-6">
+const NavLinkPlain = props => (
+  <a className="block text-xl my-3 lg:inline-block lg:mt-0  mr-4" {...props} />
+)
+
+const Header = () => (
+  <NavWidthContainer>
+    <header className="flex flex-row items-center justify-between flex-wrap">
+      <div className="flex flex-col max-w-lg flex-shrink-0 text-gray-800 mr-6 flex-1">
         <Link
-          className="text-gray-800 font-semibold text-3xl tracking-tight"
+          className="text-gray-800 font-semibold text-5xl tracking-tight no-hover-effect"
           to="/"
         >
-          Dmitry Borody
+          Hi, I'm Dmitry
         </Link>
+        <h2 className="text-2xl max-w-xl">
+          Full-stack web developer with a passion for UX and building products.
+          He/him.
+        </h2>
+        <div className="text-lg font-normal text-teal-600">
+          <MdLocationOn className="inline-block" />
+          Vancouver, Canada or remote
+        </div>
       </div>
-      <div className="text-lg w-full flex-grow flex items-center">
-        {/* <NavLink to="/projects">Projects</NavLink>
-        <NavLink to="/blog">Blog</NavLink>
-        <NavLink to="/links">Links</NavLink> */}
-        <NavLink to="/about">About</NavLink>
-      </div>
-    </nav>
-  </WidthContainer>
+      <nav className="text-lg flex flex-col justify-start items-end">
+        <NavLink to="/">🏠 Home</NavLink>
+        <NavLink to="/about">🙌 About</NavLink>
+        <NavLink to="/projects">👨‍💻 Projects</NavLink>
+        <NavLink to="/blog">✍️ Notes</NavLink>
+        <NavLinkPlain href="https://twitter.com/dmitry_borody">
+          <FaTwitter className="text-blue-500 inline-block mr-2" /> Follow
+        </NavLinkPlain>
+        {/* <NavLink to="/links">Links</NavLink> */}
+        {/* <NavLink to="/likes">Likes</NavLink> */}
+      </nav>
+    </header>
+  </NavWidthContainer>
 )
 
 const SocialLink = ({ to, children }) => (
@@ -46,7 +64,7 @@ const SocialLink = ({ to, children }) => (
     href={to}
     target="_blank"
     rel="noreferrer"
-    className="text-xl text-gray-500 mr-3 hover:text-gray-700 p-2"
+    className="text-xl text-gray-500 mr-3 hover:text-gray-700 p-2 cursor-pointer"
   >
     {children}
   </a>
@@ -113,19 +131,24 @@ const Footer = () => {
   )
 }
 
-const Layout = ({ location, title, children }) => {
-  const rootPath = `${__PATH_PREFIX__}/`
-  const aboutPath = `${__PATH_PREFIX__}/about/`
-  let header
+const PageContainer = props => (
+  <div
+    className="max-w-6xl bg-white mx-auto min-h-screen py-8 px-10"
+    {...props}
+  />
+)
 
+const Layout = ({ location, title, children }) => {
   return (
-    <div>
-      <Nav />
-      <WidthContainer>
-        <main>{children}</main>
-      </WidthContainer>
+    <PageContainer>
+      <div style={{ minHeight: "calc(100vh - 150px)" }}>
+        <Header />
+        <WidthContainer>
+          <main className="mt-12">{children}</main>
+        </WidthContainer>
+      </div>
       <Footer />
-    </div>
+    </PageContainer>
   )
 }
 

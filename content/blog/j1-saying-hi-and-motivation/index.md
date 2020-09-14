@@ -1,10 +1,8 @@
 ---
 title: Saying hi, motivation for blogging
 date: "2020-09-06 13:44:28"
-description: "Exploring my motivation for writing and starting this blog"
+description: "Exploring my own motivation for writing."
 ---
-
-## Intro
 
 In this first post, I'm exploring my motivation for writing and starting this blog.
 

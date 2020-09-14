@@ -41,6 +41,7 @@
   },
   "devDependencies": {
     "gatsby-plugin-postcss": "^2.3.11",
+    "postcss-nested": "^4.2.3",
     "prettier": "2.1.0"
   },
   "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",

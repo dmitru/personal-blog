@@ -16,9 +16,9 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
       />
-      <article className="mt-8">
+      <article className="mt-10 max-w-xl mx-auto">
         <header>
-          <h1 className="text-3lg">{post.frontmatter.title}</h1>
+          <h1 className="text-3xl mb-0">{post.frontmatter.title}</h1>
           <p className="text-gray-500">{post.frontmatter.date}</p>
         </header>
         <section dangerouslySetInnerHTML={{ __html: post.html }} />
@@ -30,7 +30,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         />
       </article>
 
-      <nav>
+      <nav className="mb-8">
         <ul
           style={{
             display: `flex`,

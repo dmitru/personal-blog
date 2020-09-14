@@ -11,7 +11,7 @@ GithubTheme.overrideThemeStyles = () => {
 
 delete GithubTheme.googleFonts
 
-const typography = new Typography(GithubTheme)
+const typography = new Typography({ ...GithubTheme, includeNormalize: false })
 
 // Hot reload typography in development.
 if (process.env.NODE_ENV !== `production`) {

@@ -1,20 +1,19 @@
 ---
 title: Faster TypeScript compilation in VSCode
 date: "2020-09-08"
-description: "How to address TypeScript slowness in VSCode in 1 min"
+description: "A hack to to make TypeScript run faster in VSCode."
 ---
 
-## 🐌 Addressing TypeScript slowness
+It's no secret that **TypeScript can get slow in VSCode**. Especially so for code-bases with non-trivial type inference (I'm looking at you, <a href="https://github.com/chakra-ui/chakra-ui">ChakraUI</a>).
 
-We all know how **TypeScript can get slow in VSCode**. Ever found yourself waiting for the compiler to catch up with you as you type new code or fix errors?
-
-This quickly gets frustrating, slowing down your feedback loops (and fast feedback loops are great to keep you happy and motivated!).
+Ever found yourself waiting for the compiler to catch up with you as you type new code or fix errors?
+This quickly gets frustrating, what's worse it slows down your feedback loops.
 
 Here I'm sharing a simple tip that saved me hours of my life over the last 3 years working with TypeScript codebases (especially large ones!).
 
 I wish I knew it earlier when I was just getting started with TypeScript…
 
-## 🚀 How to fix slow TypeScript compilation
+## How to fix slow TypeScript compilation
 
 Here’s the trick:
 
@@ -49,6 +48,4 @@ This starts a separate TypeScript process in the watch mode. It’ll take some t
 
 ## 🙌 That’s it!
 
-I hope this tip helps you to have a faster TypeScript workflow and to be more efficient and happier when coding (it certainly helped me).
-
-Please share your own experiences — did it help you to speed up your workflow?
+I hope this tip helps you to have a faster TypeScript workflow and to be more happier at work (it certainly helped me!).
