@@ -3,6 +3,7 @@ import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import { FaLink, FaShare } from "react-icons/fa"
 
 const ArrowIcon = () => (
   <svg
@@ -32,57 +33,93 @@ const BlogIndex = ({ data, location }) => {
           <div className="flex flex-wrap -m-4">
             <div className="p-4 lg:w-1/3">
               <div className="h-full rounded-lg relative">
-                <h1 className="sm:text-xl text-lg font-medium mb-3">
-                  Working together
-                </h1>
-
-                <p className="mb-3">
-                  Have a project or collaboration in mind? <br />
-                  I'll be happy to chat.
-                </p>
-                <a className="inline-flex items-center font-semibold">
+                <h1 className="lg:text-2xl text-2xl font-medium mb-3">
                   Work with me
-                  <ArrowIcon />
-                </a>
+                </h1>
 
                 <p>
                   I specialize in building Single Page Applications and SaaS,
                   doing full-stack web development with Next.js, TypeScript,
                   React and Node.
                 </p>
-                <p>I work either solo or extend your existing team.</p>
-                <p>Open to part-time or full-time opportunities.</p>
+                <p>
+                  I work either solo or extend your existing team, part-time or
+                  full-time.
+                </p>
+                <p>Registered as a Canadian legal entity.</p>
 
-                <a className="inline-flex items-center font-semibold">
+                {/* <a className="inline-flex items-center">
                   Skills & Experience
                   <ArrowIcon />
-                </a>
+                </a> */}
+
+                <p className="mt-10">
+                  <strong>Having a project or collaboration in mind?</strong>{" "}
+                  <br />
+                  I'll be happy to chat with you.
+                </p>
+                <Link
+                  className="inline-flex items-center mb-6"
+                  to="/about#contact"
+                >
+                  Contact me
+                  <ArrowIcon />
+                </Link>
               </div>
             </div>
 
             <div className="p-4 lg:w-1/3">
               <div className="h-full rounded-lg relative">
-                <h1 className="sm:text-xl text-lg font-medium mb-3">
+                <h1 className="lg:text-2xl text-2xl font-medium mb-1">
                   Projects
                 </h1>
-                <Project title={<a href="https://inkarnate.com">Inkarnate</a>}>
-                  Online editor and community for creating fantasy maps for DnD
-                  and tabletop.
-                </Project>
                 <Project
-                  title={<a href="https://wordcloudy.com">Wordcloudy</a>}
+                  title={
+                    <a className="text-gray-800" href="https://inkarnate.com">
+                      Inkarnate
+                      <FaShare className="inline-block ml-2 text-gray-400 text-xs" />
+                    </a>
+                  }
                 >
-                  SaaS, advanced & easy-to-use wordcloud art generator.
+                  SaaS, online editor and community for creating fantasy maps
+                  for DnD and tabletop. <br />
+                  <em>Frontend, UX & product design</em>
                 </Project>
                 <Project
-                  title={<a href="https://myguitartuner.com">MyGuitarTuner</a>}
+                  title={
+                    <a className="text-gray-800" href="https://wordcloudy.com">
+                      Wordcloudy
+                      <FaShare className="inline-block ml-2 text-gray-400 text-xs" />
+                    </a>
+                  }
+                >
+                  SaaS, advanced & easy-to-use wordcloud art generator. <br />
+                  <em>Maker, everything</em>
+                </Project>
+                <Project
+                  title={
+                    <a
+                      className="text-gray-800"
+                      href="https://myguitartuner.com"
+                    >
+                      MyGuitarTuner
+                      <FaShare className="inline-block ml-2 text-gray-400 text-xs" />
+                    </a>
+                  }
                 >
                   Fastest microphone tuner on the web. Implemented in
                   WebAssembly and Canvas visualization. 13k monthly users.
+                  <br />
+                  <em>Maker, everything</em>
                 </Project>
 
-                <a className="inline-flex items-center mt-5  font-semibold">
-                  See all 8 projects
+                <a
+                  className="inline-flex items-center mt-5"
+                  href="https://www.linkedin.com/in/dmitriyborodiy/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  More experience & projects
                   <ArrowIcon />
                 </a>
               </div>
@@ -90,7 +127,7 @@ const BlogIndex = ({ data, location }) => {
 
             <div className="p-4 lg:w-1/3">
               <div className="h-full rounded-lg relative">
-                <h1 className="sm:text-xl text-lg font-medium mb-3">
+                <h1 className="lg:text-2xl text-2xl font-medium mb-3">
                   Recent Notes
                 </h1>
                 {posts.map(({ node }, index) => {
@@ -106,10 +143,10 @@ const BlogIndex = ({ data, location }) => {
                     />
                   )
                 })}
-                <a className="inline-flex items-center mt-5 font-semibold">
+                {/* <a className="inline-flex items-center mt-5">
                   See all {posts.length} notes
                   <ArrowIcon />
-                </a>
+                </a> */}
               </div>
             </div>
           </div>
@@ -121,19 +158,19 @@ const BlogIndex = ({ data, location }) => {
 
 const Project = ({ title, children }) => (
   <article className="mb-4">
-    <h2 className="text-base mb-0 text-body font-semibold">{title}</h2>
-    {children}
+    <h3 className="text-base text-gray-900 mb-2 font-semibold">{title}</h3>
+    <div className="text-sm">{children}</div>
   </article>
 )
 
 const BlogEntryShort = ({ to, title, description }) => (
   <article className="mb-4">
-    <h3 className="text-base font-semibold">
-      <Link to={to} className="">
+    <h3 className="text-base font-semibold mb-2">
+      <Link to={to} className="text-gray-900">
         {title}
       </Link>
     </h3>
-    {description && <p>{description}</p>}
+    {description && <p className="mt-0 text-sm">{description}</p>}
   </article>
 )
 

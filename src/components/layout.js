@@ -5,59 +5,35 @@ import {
   FaGithub,
   FaLinkedin,
   FaMedium,
-  FaHome,
 } from "react-icons/fa"
-import { MdLocationOn } from "react-icons/md"
-import { Link, useStaticQuery, graphql } from "gatsby"
+import { MdMail } from "react-icons/md"
+import { Header } from "./header"
+import { Link, useStaticQuery, graphql, Image } from "gatsby"
 
-const WidthContainer = props => <div className="px-5 mx-auto" {...props} />
-
-const NavWidthContainer = props => <div className="px-5  mx-auto" {...props} />
-
-const NavLink = props => (
-  <Link
-    className="block text-xl my-3 lg:inline-block lg:mt-0  mr-4"
+const PageContainer = props => (
+  <div
+    className="max-w-6xl bg-white mx-auto min-h-screen py-4 px-2 sm:py-6 sm:px-4 lg:py-8 lg:px-10"
     {...props}
   />
 )
 
-const NavLinkPlain = props => (
-  <a className="block text-xl my-3 lg:inline-block lg:mt-0  mr-4" {...props} />
-)
-
-const Header = () => (
-  <NavWidthContainer>
-    <header className="flex flex-row items-center justify-between flex-wrap">
-      <div className="flex flex-col max-w-lg flex-shrink-0 text-gray-800 mr-6 flex-1">
-        <Link
-          className="text-gray-800 font-semibold text-5xl tracking-tight no-hover-effect"
-          to="/"
-        >
-          Hi, I'm Dmitry
-        </Link>
-        <h2 className="text-2xl max-w-xl">
-          Full-stack web developer with a passion for UX and building products.
-          He/him.
-        </h2>
-        <div className="text-lg font-normal text-teal-600">
-          <MdLocationOn className="inline-block" />
-          Vancouver, Canada or remote
-        </div>
+const Layout = ({ location, title, children }) => {
+  return (
+    <PageContainer>
+      <div style={{ minHeight: "calc(100vh - 150px)" }} className="mb-12">
+        <Header />
+        <WidthContainer>
+          <main className="mt-12">{children}</main>
+        </WidthContainer>
       </div>
-      <nav className="text-lg flex flex-col justify-start items-end">
-        <NavLink to="/">🏠 Home</NavLink>
-        <NavLink to="/about">🙌 About</NavLink>
-        <NavLink to="/projects">👨‍💻 Projects</NavLink>
-        <NavLink to="/blog">✍️ Notes</NavLink>
-        <NavLinkPlain href="https://twitter.com/dmitry_borody">
-          <FaTwitter className="text-blue-500 inline-block mr-2" /> Follow
-        </NavLinkPlain>
-        {/* <NavLink to="/links">Links</NavLink> */}
-        {/* <NavLink to="/likes">Likes</NavLink> */}
-      </nav>
-    </header>
-  </NavWidthContainer>
-)
+      <Footer />
+    </PageContainer>
+  )
+}
+
+export default Layout
+
+const WidthContainer = props => <div className="px-5 mx-auto" {...props} />
 
 const SocialLink = ({ to, children }) => (
   <a
@@ -112,6 +88,9 @@ const Footer = () => {
             <SocialLink to={social.twitter}>
               <FaTwitter />
             </SocialLink>
+            <SocialLink to="mailto://dmitriy.borodiy@gmail.com">
+              <MdMail />
+            </SocialLink>
             <SocialLink to={social.github}>
               <FaGithub />
             </SocialLink>
@@ -130,26 +109,3 @@ const Footer = () => {
     </footer>
   )
 }
-
-const PageContainer = props => (
-  <div
-    className="max-w-6xl bg-white mx-auto min-h-screen py-8 px-10"
-    {...props}
-  />
-)
-
-const Layout = ({ location, title, children }) => {
-  return (
-    <PageContainer>
-      <div style={{ minHeight: "calc(100vh - 150px)" }}>
-        <Header />
-        <WidthContainer>
-          <main className="mt-12">{children}</main>
-        </WidthContainer>
-      </div>
-      <Footer />
-    </PageContainer>
-  )
-}
-
-export default Layout

@@ -4,31 +4,23 @@ import Image from "gatsby-image"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm } from "../utils/typography"
+import { FaTwitter } from "react-icons/fa"
 
 const Index = ({ data, location }) => {
-  const { author, title: siteTitle, social } = data.site.siteMetadata
+  const { title: siteTitle, social } = data.site.siteMetadata
 
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="About" />
 
       <div
+        className="mt-10 max-w-xl mx-auto"
         style={{
           // display: `flex`,
           marginBottom: rhythm(2.5),
         }}
       >
-        <Image
-          fixed={data.avatar.childImageSharp.fixed}
-          alt={author.name}
-          className="mb-4"
-          imgStyle={{
-            borderRadius: `20%`,
-          }}
-        />
-
         <div>
-          <h1 className="text-2xl">Intro</h1>
           <p>
             Currently, I specialize in building APIs and SPAs with rich user
             interfaces using TypeScript, React and Node.js. I'm interested in
@@ -59,36 +51,12 @@ const Index = ({ data, location }) => {
             >
               freelancing
             </a>{" "}
-            and slow-traveling for 3 years in over 25 countries, co-living and
-            co-working with some wonderful people.
+            and slow-traveling for 3 years to over 25 countries.
           </p>
-
-          <h2>Let's work together!</h2>
-
-          <p>
-            <strong>I might be open for contracting.</strong>
-          </p>
-          <p>
-            If you'd like to discuss a project, get a quote or work with me,
-            send me an email or{" "}
-            <a
-              href="https://twitter.com/messages/compose?recipient_id=1232342065360637952"
-              target="_blank"
-              rel="noreferrer"
-            >
-              DM me on Twitter
-            </a>
-            . For my work experience and testimonials, please check out my{" "}
-            <a href={social.linkedin} target="_blank" rel="noreferrer">
-              Linkedin profile
-            </a>
-            .
-          </p>
-
+          <h2 className="text-2xl">Interests in Tech</h2>
           <p className="mt-10">
             My current <strong>tech stack</strong> I'm the most productive with:
           </p>
-
           <ul>
             <li>
               <strong>Frontend:</strong> TypeScript, React, Next.js, Gatsby,
@@ -114,45 +82,56 @@ const Index = ({ data, location }) => {
             </li>
           </ul>
 
-          <h2>My Interests</h2>
+          <p>What I enjoy working on the most:</p>
           <ul>
-            <li>
-              Tech domains:
-              <ul>
-                <li>UI/UX/Graphical design tools</li>
-                <li>Dev experience & productivity</li>
-                <li>Crafting great UIs and UX</li>
-                <li>Performance, profiling & optimization</li>
-                <li>All things web, TypeScript, Rust/WebAssembly</li>
-                <li>Serverless</li>
-              </ul>
-            </li>
-            <li>
-              Non-tech:
-              <ul>
-                <li>UI/UX/Graphical design tools</li>
-                <li>Dev experience & productivity</li>
-                <li>Crafting great UIs and UX</li>
-                <li>Performance, profiling & optimization</li>
-                <li>Serverless</li>
-              </ul>
-            </li>
+            <li>UI/UX/Graphical design tools</li>
+            <li>Dev experience & productivity tools</li>
+            <li>Crafting great, fast end-user UIs and UX</li>
+            <li>Performance, profiling & optimization</li>
+            <li>All things web, TypeScript, Rust/WebAssembly</li>
           </ul>
-
+          <h2 className="text-2xl">Outside of Tech</h2>
+          <p>Random fact: in my reckless youth, I was a graffiti artist.</p>
           <p>
-            {"I like spending my free time "}
+            {"I like to "}
             <a
               href="https://soundcloud.com/charmonium"
               target="_blank"
               rel="noreferrer"
             >
-              improvising on an instrument (mostly bass and guitar)
+              jam (on various drums, bass & guitar) with others
             </a>
-            , reading and hiking.
+            , read books and go on hikes.{" "}
           </p>
-
-          <p>Random fact: in my reckless youth, I was a graffiti artist.</p>
+          <p>
+            Also being alone in wilderness, travel light, vanlife, taking long
+            walks, mid-day naps, cats and turkish cofee. I'm trying to keep at
+            my QiGong practice to balance my body and mind.
+          </p>
         </div>
+
+        <h2 id="contact" className="text-2xl">
+          Contact me
+        </h2>
+
+        <p>
+          If you'd like to discuss a project, get a quote or work with me,{" "}
+          <a
+            href="https://twitter.com/messages/compose?recipient_id=1232342065360637952"
+            target="_blank"
+            rel="noreferrer"
+          >
+            DM me on Twitter
+          </a>
+          or <a href="mailto://dmitriy.borodiy@gmail.com">send me an email.</a>
+        </p>
+        <p>
+          For full work experience and client testimonials, please visit my{" "}
+          <a href={social.linkedin} target="_blank" rel="noreferrer">
+            Linkedin profile
+          </a>
+          .
+        </p>
       </div>
     </Layout>
   )
@@ -162,13 +141,6 @@ export default Index
 
 export const pageQuery = graphql`
   query {
-    avatar: file(absolutePath: { regex: "/profile-pic.jpg/" }) {
-      childImageSharp {
-        fixed(width: 200, height: 200) {
-          ...GatsbyImageSharpFixed
-        }
-      }
-    }
     site {
       siteMetadata {
         title
