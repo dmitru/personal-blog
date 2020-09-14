@@ -1,10 +1,10 @@
 module.exports = {
   siteMetadata: {
-    title: `Dmitry Borody – web developer, UX designer, maker.`,
+    title: `Dmitry Borody – full-stack web developer, remote contractor, maker.`,
     author: {
       name: `Dmitry Borody`,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
+    description: `Expert full-stack web development services. Remote contractor based in Vancouver, Canada.`,
     siteUrl: `https://dmitryborody.com/`,
     social: {
       twitter: `https://twitter.com/dmitry_borody`,
