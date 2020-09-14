@@ -26,7 +26,7 @@ const BlogIndex = ({ data, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <SEO title="Dmitry Borody – Full-stack React, Node.js developer, contract and freelance" />
+      <SEO title="Dmitry Borody – Full-stack React and Node.js developer" />
 
       <section className=" body-font">
         <div className="">

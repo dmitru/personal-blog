@@ -37,6 +37,16 @@ const SEO = ({ description, lang, meta, title }) => {
       title={title}
       titleTemplate={`%s | ${site.siteMetadata.title}`}
       meta={[
+        // Mugshotbot.com integration for social image previews
+        {
+          name: "og:image",
+          content: "https://www.mugshotbot.com/m?url=https://dmitryborody.com",
+        },
+        {
+          name: "twitter:card",
+          content: "summary_large_image",
+        },
+        //
         {
           name: `description`,
           content: metaDescription,
