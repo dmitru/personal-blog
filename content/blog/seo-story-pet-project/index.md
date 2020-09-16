@@ -67,7 +67,10 @@ Instead of making it a one-page app, **I splitted the app into many separate pag
 
   E.g. when I found that one page did better then others in terms of click rate, I used wording of that page for other pages too.
 
-  If I saw an improvement, it increased the probability that the new wording is more appealing, more clickable.
+  If I saw an improvement, it increased the probability that the new wording ranks better, more clickable (or both).
+
+  Overall, I did around 15 changes/experiments with niche pages, optimizing their content, title and description tags.
+  The feedback from the Goggle Search Console was delayed by a few days to a week.
 
 ## Niche pages stats
 
