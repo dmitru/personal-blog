@@ -5,7 +5,7 @@ module.exports = {
       name: `Dmitry Borody`,
     },
     description: `Expert full-stack web development services. Remote contractor based in Vancouver, Canada.`,
-    siteUrl: `https://dmitryborody.com/`,
+    siteUrl: `https://dmitryborody.com`,
     social: {
       twitter: `https://twitter.com/dmitry_borody`,
       linkedin: "https://www.linkedin.com/in/dmitriyborodiy/",

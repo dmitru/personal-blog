@@ -9,12 +9,19 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.markdownRemark
   const siteTitle = data.site.siteMetadata.title
   const { previous, next } = pageContext
+  console.log("pageContext", pageContext, data)
 
   return (
     <Layout location={location} title={siteTitle}>
       <SEO
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
+        meta={[
+          {
+            name: "og:image",
+            content: `https://www.mugshotbot.com/m?url=https://dmitryborody.com${pageContext.slug}`,
+          },
+        ]}
       />
       <article className="mt-10 max-w-xl mx-auto">
         <header>
@@ -66,6 +73,7 @@ export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
     site {
       siteMetadata {
+        siteUrl
         title
       }
     }

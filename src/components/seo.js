@@ -29,6 +29,57 @@ const SEO = ({ description, lang, meta, title }) => {
 
   const metaDescription = description || site.siteMetadata.description
 
+  const defaultMeta = [
+    // Mugshotbot.com integration for social image previews
+    {
+      name: "og:image",
+      content: "https://www.mugshotbot.com/m?url=https://dmitryborody.com",
+    },
+    {
+      name: "twitter:card",
+      content: "summary_large_image",
+    },
+    //
+    {
+      name: `description`,
+      content: metaDescription,
+    },
+    {
+      property: `og:title`,
+      content: title,
+    },
+    {
+      property: `og:description`,
+      content: metaDescription,
+    },
+    {
+      property: `og:type`,
+      content: `website`,
+    },
+    {
+      name: `twitter:card`,
+      content: `summary`,
+    },
+    {
+      name: `twitter:creator`,
+      content: site.siteMetadata.social.twitter,
+    },
+    {
+      name: `twitter:title`,
+      content: title,
+    },
+    {
+      name: `twitter:description`,
+      content: metaDescription,
+    },
+  ]
+
+  const metaOrEmpty = meta || []
+  const metaWithDefaults = [
+    ...defaultMeta.filter(m => !metaOrEmpty.find(m2 => m2.name === m.name)),
+    ...metaOrEmpty,
+  ]
+
   return (
     <Helmet
       htmlAttributes={{
@@ -36,50 +87,7 @@ const SEO = ({ description, lang, meta, title }) => {
       }}
       title={title}
       titleTemplate={`%s | ${site.siteMetadata.title}`}
-      meta={[
-        // Mugshotbot.com integration for social image previews
-        {
-          name: "og:image",
-          content: "https://www.mugshotbot.com/m?url=https://dmitryborody.com",
-        },
-        {
-          name: "twitter:card",
-          content: "summary_large_image",
-        },
-        //
-        {
-          name: `description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:title`,
-          content: title,
-        },
-        {
-          property: `og:description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:type`,
-          content: `website`,
-        },
-        {
-          name: `twitter:card`,
-          content: `summary`,
-        },
-        {
-          name: `twitter:creator`,
-          content: site.siteMetadata.social.twitter,
-        },
-        {
-          name: `twitter:title`,
-          content: title,
-        },
-        {
-          name: `twitter:description`,
-          content: metaDescription,
-        },
-      ].concat(meta)}
+      meta={metaWithDefaults}
     />
   )
 }
