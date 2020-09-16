@@ -33,7 +33,8 @@ const SEO = ({ description, lang, meta, title }) => {
     // Mugshotbot.com integration for social image previews
     {
       name: "og:image",
-      content: "https://www.mugshotbot.com/m?url=https://dmitryborody.com",
+      content:
+        "https://www.mugshotbot.com/m?mode=dark&color=orange&pattern=lines_in_motion&url=https://dmitryborody.com",
     },
     {
       name: "twitter:card",

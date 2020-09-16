@@ -19,7 +19,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         meta={[
           {
             name: "og:image",
-            content: `https://www.mugshotbot.com/m?url=https://dmitryborody.com${pageContext.slug}`,
+            content: `https://www.mugshotbot.com/m?mode=dark&color=orange&pattern=lines_in_motion&url=https://dmitryborody.com${pageContext.slug}`,
           },
         ]}
       />
