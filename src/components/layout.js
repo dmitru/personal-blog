@@ -67,8 +67,8 @@ const Footer = () => {
   return (
     <footer className="py-4 mt-6">
       <WidthContainer>
-        <div className="flex flex-row">
-          <div className="text-gray-500 text-md flex-1">
+        <div className="flex flex-col-reverse sm:flex-row">
+          <div className="text-gray-500 text-md flex-1 text-center sm:text-left mt-6 sm:mt-0">
             <a
               href="https://github.com/dmitru/personal-blog"
               className="text-gray-500"
@@ -84,7 +84,7 @@ const Footer = () => {
             </a>
           </div>
 
-          <div className="flex flex-row flex-1 justify-end w-full">
+          <div className="flex flex-row flex-wrap flex-1 justify-center sm:justify-end w-full">
             <SocialLink to={social.twitter}>
               <FaTwitter />
             </SocialLink>
