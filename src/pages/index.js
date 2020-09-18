@@ -33,30 +33,18 @@ const BlogIndex = ({ data, location }) => {
           <div className="flex flex-wrap -m-4">
             <div className="p-4 lg:w-1/3">
               <div className="h-full rounded-lg relative">
-                <h1 className="lg:text-2xl text-2xl font-medium mb-3">
-                  Work with me
-                </h1>
+                <h1 className="lg:text-2xl text-2xl font-medium mb-3">Intro</h1>
 
                 <p>
                   I specialize in building Single Page Applications and SaaS,
                   doing full-stack web development with Next.js, TypeScript,
                   React and Node.
                 </p>
-                <p>
-                  I work either solo or extend your existing team, part-time or
-                  full-time.
-                </p>
-                <p>Registered as a Canadian legal entity.</p>
-
-                {/* <a className="inline-flex items-center">
-                  Skills & Experience
-                  <ArrowIcon />
-                </a> */}
 
                 <p className="mt-10">
-                  <strong>Having a project or collaboration in mind?</strong>{" "}
+                  <strong>Have a project or collaboration in mind?</strong>{" "}
                   <br />
-                  I'll be happy to chat with you.
+                  Let's have a chat!
                 </p>
                 <Link
                   className="inline-flex items-center mb-6"
