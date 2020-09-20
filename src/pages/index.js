@@ -3,7 +3,7 @@ import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { FaLink, FaShare } from "react-icons/fa"
+import { FaGithub, FaLink, FaShare } from "react-icons/fa"
 
 const ArrowIcon = () => (
   <svg
@@ -99,6 +99,20 @@ const BlogIndex = ({ data, location }) => {
                   WebAssembly and Canvas visualization. 13k monthly users.
                   <br />
                   <em>Maker, everything</em>
+                </Project>
+                <Project
+                  title={
+                    <a
+                      className="text-gray-800"
+                      href="https://github.com/dmitru/console-log-img"
+                    >
+                      console-log-img
+                      <FaGithub className="inline-block ml-2 text-gray-400 text-xs" />
+                    </a>
+                  }
+                >
+                  Tiny lib for printing images and Canvases to browser console,
+                  helps developing and debugging canvas-based apps.
                 </Project>
 
                 <a
