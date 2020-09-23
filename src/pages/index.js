@@ -41,6 +41,16 @@ const BlogIndex = ({ data, location }) => {
                   React and Node.
                 </p>
 
+                <p>
+                  <Link
+                    to="/projects"
+                    className="inline-flex items-center mb-6"
+                  >
+                    Check out my portfolio
+                    <ArrowIcon />
+                  </Link>
+                </p>
+
                 <p className="mt-10">
                   <strong>Have a project or collaboration in mind?</strong>{" "}
                   <br />

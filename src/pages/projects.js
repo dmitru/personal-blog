@@ -1,8 +1,9 @@
 import { graphql } from "gatsby"
 import React from "react"
 import Layout from "../components/layout"
-import { InkarnateProject } from "../components/projects/inkarnate"
 import SEO from "../components/seo"
+import { InkarnateProject } from "../components/projects/inkarnate"
+import { WordcloudyProject } from "../components/projects/wordcloudy"
 
 const Projects = ({ data, location }) => {
   const { title: siteTitle, social } = data.site.siteMetadata
@@ -15,7 +16,13 @@ const Projects = ({ data, location }) => {
         <h1 className="text-3xl">My Work and Projects</h1>
       </div>
 
-      <InkarnateProject data={data} />
+      <div className="mb-10">
+        <InkarnateProject />
+      </div>
+
+      <div className="mb-10">
+        <WordcloudyProject />
+      </div>
     </Layout>
   )
 }

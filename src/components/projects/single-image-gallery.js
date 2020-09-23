@@ -15,7 +15,7 @@ export const SingleImageGallery = ({ imgs, index, ...props }) => {
         className="img-gallery-btn w-full"
       >
         <Img
-          fixed={imgs[index || 0]}
+          fixed={imgs[index || 0].fixed}
           imgStyle={{
             objectFit: "contain",
           }}
@@ -23,8 +23,12 @@ export const SingleImageGallery = ({ imgs, index, ...props }) => {
         />
       </button>
       <ReactBnbGallery
+        keyboard
         show={isOpen}
-        photos={imgs.map(fixed => ({ photo: fixed.src }))}
+        photos={imgs.map(({ fixed, title }) => ({
+          photo: fixed.src,
+          caption: title,
+        }))}
         onClose={() => setIsOpen(false)}
         activePhotoIndex={index || 0}
       />

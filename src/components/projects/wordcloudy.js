@@ -1,7 +1,7 @@
 import { graphql, useStaticQuery } from "gatsby"
 import React from "react"
 import "react-bnb-gallery/dist/style.css"
-import { FaLink, FaReddit } from "react-icons/fa"
+import { FaFacebook, FaLink, FaReddit } from "react-icons/fa"
 import ReactPlayer from "react-player"
 import SwiperCore, {
   A11y,
@@ -17,48 +17,38 @@ import { SingleImageGallery } from "./single-image-gallery"
 // install Swiper components
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y, Parallax])
 
-export const InkarnateProject = () => {
+export const WordcloudyProject = () => {
   const data = useStaticQuery(graphql`
     query {
-      inkarnate: file(
-        absolutePath: { regex: "/projects/inkarnate-editor.jpg/" }
-      ) {
+      cover: file(absolutePath: { regex: "/projects/wordcloudy-cover.jpg/" }) {
+        childImageSharp {
+          fixed(width: 1300) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+      appDemo1: file(absolutePath: { regex: "/projects/wordcloudy-4.jpg/" }) {
         childImageSharp {
           fixed(width: 1400) {
             ...GatsbyImageSharpFixed
           }
         }
       }
-      inkarnate4: file(
-        absolutePath: { regex: "/projects/inkarnate-editor-2.jpg/" }
-      ) {
+      appDemo2: file(absolutePath: { regex: "/projects/wordcloudy-1.jpg/" }) {
         childImageSharp {
           fixed(width: 1400) {
             ...GatsbyImageSharpFixed
           }
         }
       }
-      inkarnate3: file(
-        absolutePath: { regex: "/projects/inkarnate-editor-3.jpg/" }
-      ) {
+      appDemo3: file(absolutePath: { regex: "/projects/wordcloudy-3.jpg/" }) {
         childImageSharp {
           fixed(width: 1400) {
             ...GatsbyImageSharpFixed
           }
         }
       }
-      inkarnate2: file(
-        absolutePath: { regex: "/projects/inkarnate-editor-4.jpg/" }
-      ) {
-        childImageSharp {
-          fixed(width: 1400) {
-            ...GatsbyImageSharpFixed
-          }
-        }
-      }
-      inkarnate5: file(
-        absolutePath: { regex: "/projects/inkarnate-editor-5.jpg/" }
-      ) {
+      appDemo4: file(absolutePath: { regex: "/projects/wordcloudy-2.jpg/" }) {
         childImageSharp {
           fixed(width: 1400) {
             ...GatsbyImageSharpFixed
@@ -81,58 +71,44 @@ export const InkarnateProject = () => {
 
   const galleryImgs = [
     {
-      fixed: data.inkarnate.childImageSharp.fixed,
-      title: "Editor, an object selected",
+      fixed: data.appDemo1.childImageSharp.fixed,
+      title: "Editor, fonts customization",
+    },
+    { fixed: data.appDemo2.childImageSharp.fixed, title: "Landing page" },
+    {
+      fixed: data.appDemo3.childImageSharp.fixed,
+      title: "Editor, layout panel",
     },
     {
-      fixed: data.inkarnate2.childImageSharp.fixed,
-      title: "Editor UI, geometry tool",
-    },
-    {
-      fixed: data.inkarnate4.childImageSharp.fixed,
-      title: "Editor UI, brush tool",
-    },
-    {
-      fixed: data.inkarnate3.childImageSharp.fixed,
-      title: "User-generated content feed",
-    },
-    {
-      fixed: data.inkarnate5.childImageSharp.fixed,
-      title: "User profile page",
+      fixed: data.appDemo4.childImageSharp.fixed,
+      title: "Profile page, saved designs",
     },
   ]
 
   return (
     <div className="w-full bg-gray-800 text-white">
-      <Swiper navigation parallax pagination={{ clickable: true }}>
-        <div
-          className="parallax-bg"
-          style={{
-            backgroundImage:
-              "url(https://inkarnate.com/static/media/auth-bg.0e19dac7.jpg)",
-          }}
-        />
+      <Swiper navigation parallax pagination={{ clickable: true }} keyboard>
+        <div className="parallax-bg bg-blue-800" />
         <SwiperSlide>
           <div className="flex flex-row mx-12 lg:mx-24 my-8">
             <div className="max-w-sm mr-3">
-              <h2 className="text-6xl  inline-block mr-4 mt-0 mb-0">
-                Inkarnate
+              <h2 className="text-6xl inline-block mr-4 mt-0 mb-0">
+                Wordcloudy
               </h2>
-              <p className="text-xl">
-                Best-in-class online fantasy maps editor, community and art
-                platform for D&D and tabletop enthusiasts.
-              </p>
+              <p className="text-xl">Advanced wordcloud art generator.</p>
               <p className="mt-8 mb-2">
                 <strong>My roles:</strong> <br />
-                full-stack web engineer, product and UX design.
+                maker, product design, UX, back-end, front-end, deployment,
+                infrastructure
               </p>
               <p className="mt-0">
                 <strong>Tech stack:</strong> <br />
-                TypeScript, React, Rust, Rails, Postgres.
+                Node/Nest.js, TypeScript, MobX, React, Next.js, Rust, Postgres,
+                TypeORM, AWS.
               </p>
               <div className="mt-8">
                 <a
-                  href="https://inkarnate.com"
+                  href="https://wordcloudy.com"
                   target="_blank"
                   rel="noreferrer"
                   className="text-white mr-4"
@@ -141,13 +117,13 @@ export const InkarnateProject = () => {
                   Website
                 </a>
                 <a
-                  href="https://www.reddit.com/r/inkarnate"
+                  href="https://www.facebook.com/wordcloudy"
                   target="_blank"
                   rel="noreferrer"
                   className="text-white"
                 >
-                  <FaReddit className="mr-2 inline-block" />
-                  Reddit
+                  <FaFacebook className="mr-2 inline-block" />
+                  Facebook Group
                 </a>
               </div>
             </div>
@@ -164,32 +140,23 @@ export const InkarnateProject = () => {
         </SwiperSlide>
         {/* My roles */}
         <SwiperSlide>
-          <div className=" mx-12 lg:mx-24  mt-8 mb-12">
-            <h3 className="text-4xl inline-block mr-4 mt-0 mb-0">My roles</h3>
+          <div className=" mx-12 lg:mx-24 my-10">
+            <h3 className="text-4xl  inline-block mr-4  mt-0 mb-0">My roles</h3>
             <p className="text-lg max-w-xl">
-              Joined the small remote team to help rewrite their core product.
-              Worked together with stakeholders, designer, artists and a backend
-              engineer to help craft a great user experience.
+              It's my pet project, where I did everything myself – from product
+              and UX design to implementing and deploying a complete SaaS
+              product.
             </p>
-            <ul className="text-lg">
+
+            <p className="text-lg">A few highlights:</p>
+            <ul className="text-lg max-w-lg">
               <li>
-                Co-designed and implemented the next version of the editor app
+                Reverse-engineered a few existing solutions, figured out a good
+                greedy algorithm to fill the shape with words
               </li>
               <li>
-                Helped migrating tends of thousands user accounts to the new
-                system
-              </li>
-              <li>
-                Enabled massive company growth and set it up for new business
-                directions
-              </li>
-              <li>
-                Worked with Early Access users group to gather feedback and
-                improve the app
-              </li>
-              <li>
-                Implemented advanced Canvas rendering techniques and tuned
-                client-side performance
+                Efficiently implemented this algorithm in Rust / WebAssembly
+                running in a WebWorker to keep the UI responsive.
               </li>
             </ul>
           </div>
@@ -198,7 +165,7 @@ export const InkarnateProject = () => {
         <SwiperSlide>
           <div className="flex items-center justify-center my-6">
             <ReactPlayer
-              url="https://www.youtube.com/watch?v=gNy8iIasy6w"
+              url="https://wordcloudy.sfo2.digitaloceanspaces.com/media/landing-video-loop.mp4"
               controls
             />
           </div>
