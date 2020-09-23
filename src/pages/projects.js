@@ -4,6 +4,9 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { InkarnateProject } from "../components/projects/inkarnate"
 import { WordcloudyProject } from "../components/projects/wordcloudy"
+import { ReporterSuiteProject } from "../components/projects/reportersuite"
+import { ApifiniProject } from "../components/projects/apifini"
+import { SmarketsProject } from "../components/projects/smarkets"
 
 const Projects = ({ data, location }) => {
   const { title: siteTitle, social } = data.site.siteMetadata
@@ -14,9 +17,6 @@ const Projects = ({ data, location }) => {
 
       <div className="mb-10">
         <h1 className="text-3xl">My Recent Work</h1>
-        <p>
-          This section is work-in-progress: I'll be adding more projects soon!
-        </p>
       </div>
 
       <div className="mb-10">
@@ -25,6 +25,18 @@ const Projects = ({ data, location }) => {
 
       <div className="mb-10">
         <WordcloudyProject />
+      </div>
+
+      <div className="mb-10">
+        <ApifiniProject />
+      </div>
+
+      <div className="mb-10">
+        <SmarketsProject />
+      </div>
+
+      <div className="mb-10">
+        <ReporterSuiteProject />
       </div>
     </Layout>
   )

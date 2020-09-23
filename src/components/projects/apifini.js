@@ -14,41 +14,10 @@ import { Swiper, SwiperSlide } from "swiper/react"
 import "./projects.css"
 import { SingleImageGallery } from "./single-image-gallery"
 
-// install Swiper components
-SwiperCore.use([Navigation, Pagination, Scrollbar, A11y, Parallax])
-
-export const WordcloudyProject = () => {
+export const ApifiniProject = () => {
   const data = useStaticQuery(graphql`
     query {
-      cover: file(absolutePath: { regex: "/projects/wordcloudy-cover.jpg/" }) {
-        childImageSharp {
-          fixed(width: 1300) {
-            ...GatsbyImageSharpFixed
-          }
-        }
-      }
-      appDemo1: file(absolutePath: { regex: "/projects/wordcloudy-4.jpg/" }) {
-        childImageSharp {
-          fixed(width: 2000) {
-            ...GatsbyImageSharpFixed
-          }
-        }
-      }
-      appDemo2: file(absolutePath: { regex: "/projects/wordcloudy-1.jpg/" }) {
-        childImageSharp {
-          fixed(width: 2000) {
-            ...GatsbyImageSharpFixed
-          }
-        }
-      }
-      appDemo3: file(absolutePath: { regex: "/projects/wordcloudy-3.jpg/" }) {
-        childImageSharp {
-          fixed(width: 2000) {
-            ...GatsbyImageSharpFixed
-          }
-        }
-      }
-      appDemo4: file(absolutePath: { regex: "/projects/wordcloudy-2.jpg/" }) {
+      appDemo: file(absolutePath: { regex: "/projects/apifini.jpg/" }) {
         childImageSharp {
           fixed(width: 2000) {
             ...GatsbyImageSharpFixed
@@ -71,58 +40,44 @@ export const WordcloudyProject = () => {
 
   const galleryImgs = [
     {
-      fixed: data.appDemo1.childImageSharp.fixed,
-      title: "Editor, fonts customization",
-    },
-    { fixed: data.appDemo2.childImageSharp.fixed, title: "Landing page" },
-    {
-      fixed: data.appDemo3.childImageSharp.fixed,
-      title: "Editor, layout panel",
-    },
-    {
-      fixed: data.appDemo4.childImageSharp.fixed,
-      title: "Profile page, saved designs",
+      fixed: data.appDemo.childImageSharp.fixed,
     },
   ]
 
   return (
-    <div className="slider-light w-full bg-gray-200 text-blue-900">
+    <div
+      className="slider-dark w-full text-white"
+      style={{
+        background:
+          "linear-gradient(135deg, #0cb4ce 0%, #006cff 30%, #fa12fe 145%)",
+      }}
+    >
       <Swiper navigation parallax pagination={{ clickable: true }} keyboard>
+        <div className="parallax-bg" />
         <SwiperSlide>
           <div className="flex flex-row mx-12 lg:mx-24 my-8">
             <div className="max-w-sm mr-3">
-              <h2 className="text-5xl inline-block mr-4 mt-0 mb-0">
-                Wordcloudy
-              </h2>
-              <p className="text-xl">Advanced wordcloud art generator.</p>
+              <h2 className="text-6xl inline-block mr-4 mt-0 mb-0">Apifini</h2>
+              <p className="text-xl">
+                Platform for crowdsourced ICO research (now discontinued).
+              </p>
               <p className="mt-8 mb-2">
                 <strong>My roles:</strong> <br />
-                maker, product design, UX, back-end, front-end, deployment,
-                infrastructure
+                Front-end development, UX & UI design, cloud deployment.
               </p>
               <p className="mt-0">
                 <strong>Tech stack:</strong> <br />
-                Node/Nest.js, TypeScript, MobX, React, Next.js, Rust, Postgres,
-                TypeORM, AWS.
+                React, TypeScript, Redux, Node, AWS, MongoDB
               </p>
               <div className="mt-8">
                 <a
-                  href="https://wordcloudy.com"
+                  href="https://Apifini.com"
                   target="_blank"
                   rel="noreferrer"
-                  className="text-blue-800 mr-4"
+                  className="text-white mr-4"
                 >
                   <FaLink className="mr-2 inline-block" />
                   Website
-                </a>
-                <a
-                  href="https://www.facebook.com/wordcloudy"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-blue-800"
-                >
-                  <FaFacebook className="mr-2 inline-block" />
-                  Facebook Group
                 </a>
               </div>
             </div>
@@ -160,23 +115,6 @@ export const WordcloudyProject = () => {
             </ul>
           </div>
         </SwiperSlide>
-
-        {/* Gallery */}
-        {galleryImgs.map((img, index) => (
-          <SwiperSlide key={index}>
-            <div className="flex items-center justify-center my-6">
-              <SingleImageGallery
-                index={index}
-                imgs={galleryImgs}
-                style={{
-                  height: "400px",
-                  objectFit: "contain",
-                  width: "100%",
-                }}
-              />
-            </div>
-          </SwiperSlide>
-        ))}
       </Swiper>
     </div>
   )

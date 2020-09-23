@@ -78,7 +78,7 @@ const BlogIndex = ({ data, location }) => {
         </div>
       </section>
 
-      <section className="mt-12">
+      <section className="mt-12 max-w-xl">
         <h2 className="text-3xl mb-6">Recent Notes</h2>
         {posts.map(({ node }, index) => {
           let title = node.frontmatter.title || node.fields.slug
