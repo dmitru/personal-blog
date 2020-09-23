@@ -69,7 +69,7 @@ export const Header = () => {
         <nav className="text-lg  max-w-2xl flex justify-start sm:justify-center w-full flex-row flex-wrap lg:ml-5 lg:mt-0 ml-0 mt-6">
           {/* <NavLink to="/">🏠&nbsp;Home</NavLink> */}
           <NavLink to="/about">🙌&nbsp;About</NavLink>
-          {/* <NavLink to="/projects">👨‍💻&nbsp;Projects</NavLink> */}
+          <NavLink to="/projects">👨‍💻&nbsp;Projects</NavLink>
           <NavLink to="/about#contact">🤙&nbsp;Contact</NavLink>
           {/* <NavLink to="/blog">✍️&nbsp;Notes</NavLink> */}
           <NavLinkPlain href="https://twitter.com/dmitry_borody">

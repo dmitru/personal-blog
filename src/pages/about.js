@@ -53,8 +53,9 @@ const Index = ({ data, location }) => {
             </a>{" "}
             and slow-traveling for 3 years to over 25 countries.
           </p>
+
           <h2 className="text-2xl">Interests in Tech</h2>
-          <p className="mt-10">
+          <p className="mt-4">
             My current <strong>tech stack</strong> I'm the most productive with:
           </p>
           <ul>
