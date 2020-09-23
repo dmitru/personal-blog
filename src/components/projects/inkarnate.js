@@ -24,7 +24,7 @@ export const InkarnateProject = () => {
         absolutePath: { regex: "/projects/inkarnate-editor.jpg/" }
       ) {
         childImageSharp {
-          fixed(width: 1400) {
+          fixed(width: 2000) {
             ...GatsbyImageSharpFixed
           }
         }
@@ -33,7 +33,7 @@ export const InkarnateProject = () => {
         absolutePath: { regex: "/projects/inkarnate-editor-2.jpg/" }
       ) {
         childImageSharp {
-          fixed(width: 1400) {
+          fixed(width: 2000) {
             ...GatsbyImageSharpFixed
           }
         }
@@ -42,7 +42,7 @@ export const InkarnateProject = () => {
         absolutePath: { regex: "/projects/inkarnate-editor-3.jpg/" }
       ) {
         childImageSharp {
-          fixed(width: 1400) {
+          fixed(width: 2000) {
             ...GatsbyImageSharpFixed
           }
         }
@@ -51,7 +51,7 @@ export const InkarnateProject = () => {
         absolutePath: { regex: "/projects/inkarnate-editor-4.jpg/" }
       ) {
         childImageSharp {
-          fixed(width: 1400) {
+          fixed(width: 2000) {
             ...GatsbyImageSharpFixed
           }
         }
@@ -60,7 +60,7 @@ export const InkarnateProject = () => {
         absolutePath: { regex: "/projects/inkarnate-editor-5.jpg/" }
       ) {
         childImageSharp {
-          fixed(width: 1400) {
+          fixed(width: 2000) {
             ...GatsbyImageSharpFixed
           }
         }
@@ -103,7 +103,7 @@ export const InkarnateProject = () => {
   ]
 
   return (
-    <div className="w-full bg-gray-800 text-white">
+    <div className="slider-dark w-full bg-gray-800 text-white">
       <Swiper navigation parallax pagination={{ clickable: true }}>
         <div
           className="parallax-bg"

@@ -13,7 +13,10 @@ const Projects = ({ data, location }) => {
       <SEO title="Projects" />
 
       <div className="mb-10">
-        <h1 className="text-3xl">My Work and Projects</h1>
+        <h1 className="text-3xl">My Recent Work</h1>
+        <p>
+          This section is work-in-progress: I'll be adding more projects soon!
+        </p>
       </div>
 
       <div className="mb-10">

@@ -21,6 +21,7 @@ const Index = ({ data, location }) => {
         }}
       >
         <div>
+          <h1>About</h1>
           <p>
             Currently, I specialize in building APIs and SPAs with rich user
             interfaces using TypeScript, React and Node.js. I'm interested in

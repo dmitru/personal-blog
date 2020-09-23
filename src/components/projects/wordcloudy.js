@@ -29,28 +29,28 @@ export const WordcloudyProject = () => {
       }
       appDemo1: file(absolutePath: { regex: "/projects/wordcloudy-4.jpg/" }) {
         childImageSharp {
-          fixed(width: 1400) {
+          fixed(width: 2000) {
             ...GatsbyImageSharpFixed
           }
         }
       }
       appDemo2: file(absolutePath: { regex: "/projects/wordcloudy-1.jpg/" }) {
         childImageSharp {
-          fixed(width: 1400) {
+          fixed(width: 2000) {
             ...GatsbyImageSharpFixed
           }
         }
       }
       appDemo3: file(absolutePath: { regex: "/projects/wordcloudy-3.jpg/" }) {
         childImageSharp {
-          fixed(width: 1400) {
+          fixed(width: 2000) {
             ...GatsbyImageSharpFixed
           }
         }
       }
       appDemo4: file(absolutePath: { regex: "/projects/wordcloudy-2.jpg/" }) {
         childImageSharp {
-          fixed(width: 1400) {
+          fixed(width: 2000) {
             ...GatsbyImageSharpFixed
           }
         }
@@ -86,9 +86,8 @@ export const WordcloudyProject = () => {
   ]
 
   return (
-    <div className="w-full bg-gray-800 text-white">
+    <div className="slider-light w-full bg-gray-200 text-blue-900">
       <Swiper navigation parallax pagination={{ clickable: true }} keyboard>
-        <div className="parallax-bg bg-blue-800" />
         <SwiperSlide>
           <div className="flex flex-row mx-12 lg:mx-24 my-8">
             <div className="max-w-sm mr-3">
@@ -111,7 +110,7 @@ export const WordcloudyProject = () => {
                   href="https://wordcloudy.com"
                   target="_blank"
                   rel="noreferrer"
-                  className="text-white mr-4"
+                  className="text-blue-800 mr-4"
                 >
                   <FaLink className="mr-2 inline-block" />
                   Website
@@ -120,7 +119,7 @@ export const WordcloudyProject = () => {
                   href="https://www.facebook.com/wordcloudy"
                   target="_blank"
                   rel="noreferrer"
-                  className="text-white"
+                  className="text-blue-800"
                 >
                   <FaFacebook className="mr-2 inline-block" />
                   Facebook Group
@@ -161,15 +160,7 @@ export const WordcloudyProject = () => {
             </ul>
           </div>
         </SwiperSlide>
-        {/* Demo */}
-        <SwiperSlide>
-          <div className="flex items-center justify-center my-6">
-            <ReactPlayer
-              url="https://wordcloudy.sfo2.digitaloceanspaces.com/media/landing-video-loop.mp4"
-              controls
-            />
-          </div>
-        </SwiperSlide>
+
         {/* Gallery */}
         {galleryImgs.map((img, index) => (
           <SwiperSlide key={index}>

@@ -4,6 +4,8 @@ import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { FaGithub, FaLink, FaShare } from "react-icons/fa"
+import { InkarnateProject } from "../components/projects/inkarnate"
+import { WordcloudyProject } from "../components/projects/wordcloudy"
 
 const ArrowIcon = () => (
   <svg
@@ -28,141 +30,69 @@ const BlogIndex = ({ data, location }) => {
     <Layout location={location} title={siteTitle}>
       <SEO title="Dmitry Borody – Full-stack React and Node.js developer" />
 
-      <section className=" body-font">
-        <div className="">
-          <div className="flex flex-wrap -m-4">
-            <div className="p-4 lg:w-1/3">
-              <div className="h-full rounded-lg relative">
-                <h1 className="lg:text-2xl text-2xl font-medium mb-3">Intro</h1>
+      <section>
+        <div className="flex flex-wrap flex-row -m-5">
+          <div className="p-5 lg:w-1/2">
+            <p>
+              I specialize in building Single Page Applications and SaaS, doing
+              full-stack web development with Next.js, TypeScript, React and
+              Node.
+            </p>
 
-                <p>
-                  I specialize in building Single Page Applications and SaaS,
-                  doing full-stack web development with Next.js, TypeScript,
-                  React and Node.
-                </p>
+            <p>
+              I love moving fast, delivering value for early-stage startups and
+              small team in rapid growth stage. I'm a quick learner, driven by
+              results and require minimum management overhead.
+            </p>
+          </div>
 
-                <p>
-                  <Link
-                    to="/projects"
-                    className="inline-flex items-center mb-6"
-                  >
-                    Check out my portfolio
-                    <ArrowIcon />
-                  </Link>
-                </p>
-
-                <p className="mt-10">
-                  <strong>Have a project or collaboration in mind?</strong>{" "}
-                  <br />
-                  Let's have a chat!
-                </p>
-                <Link
-                  className="inline-flex items-center mb-6"
-                  to="/about#contact"
-                >
-                  Contact me
-                  <ArrowIcon />
-                </Link>
-              </div>
-            </div>
-
-            <div className="p-4 lg:w-1/3">
-              <div className="h-full rounded-lg relative">
-                <h1 className="lg:text-2xl text-2xl font-medium mb-1">
-                  Projects
-                </h1>
-                <Project
-                  title={
-                    <a className="text-gray-800" href="https://inkarnate.com">
-                      Inkarnate
-                      <FaShare className="inline-block ml-2 text-gray-400 text-xs" />
-                    </a>
-                  }
-                >
-                  SaaS, online editor and community for creating fantasy maps
-                  for DnD and tabletop. <br />
-                  <em>Frontend, UX & product design</em>
-                </Project>
-                <Project
-                  title={
-                    <a className="text-gray-800" href="https://wordcloudy.com">
-                      Wordcloudy
-                      <FaShare className="inline-block ml-2 text-gray-400 text-xs" />
-                    </a>
-                  }
-                >
-                  SaaS, advanced & easy-to-use wordcloud art generator. <br />
-                  <em>Maker, everything</em>
-                </Project>
-                <Project
-                  title={
-                    <a
-                      className="text-gray-800"
-                      href="https://myguitartuner.com"
-                    >
-                      MyGuitarTuner
-                      <FaShare className="inline-block ml-2 text-gray-400 text-xs" />
-                    </a>
-                  }
-                >
-                  Fastest microphone tuner on the web. Implemented in
-                  WebAssembly and Canvas visualization. 13k monthly users.
-                  <br />
-                  <em>Maker, everything</em>
-                </Project>
-                <Project
-                  title={
-                    <a
-                      className="text-gray-800"
-                      href="https://github.com/dmitru/console-log-img"
-                    >
-                      console-log-img
-                      <FaGithub className="inline-block ml-2 text-gray-400 text-xs" />
-                    </a>
-                  }
-                >
-                  Tiny lib for printing images and Canvases to browser console,
-                  helps developing and debugging canvas-based apps.
-                </Project>
-
-                <a
-                  className="inline-flex items-center mt-5"
-                  href="https://www.linkedin.com/in/dmitriyborodiy/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  More experience & projects
-                  <ArrowIcon />
-                </a>
-              </div>
-            </div>
-
-            <div className="p-4 lg:w-1/3">
-              <div className="h-full rounded-lg relative">
-                <h1 className="lg:text-2xl text-2xl font-medium mb-3">
-                  Recent Notes
-                </h1>
-                {posts.map(({ node }, index) => {
-                  let title = node.frontmatter.title || node.fields.slug
-
-                  return (
-                    <BlogEntryShort
-                      key={node.fields.slug}
-                      to={node.fields.slug}
-                      title={title}
-                      description={node.frontmatter.description}
-                      date={node.frontmatter.date}
-                    />
-                  )
-                })}
-                {/* <a className="inline-flex items-center mt-5">
-                  See all {posts.length} notes
-                  <ArrowIcon />
-                </a> */}
-              </div>
-            </div>
+          <div className="p-5 lg:w-1/2">
+            <p>
+              <strong>Have a project or collaboration in mind?</strong> <br />
+              I'd love to have a chat!
+            </p>
+            <Link className="inline-flex items-center mb-6" to="/about#contact">
+              Contact me
+              <ArrowIcon />
+            </Link>
           </div>
         </div>
+      </section>
+
+      <section className="mt-10">
+        <div className="mb-6">
+          <h2 className="text-3xl mb-0 inline-block">Featured Projects</h2>
+
+          <Link to="/projects" className="inline-flex items-center ml-5">
+            See all projects
+            <ArrowIcon />
+          </Link>
+        </div>
+
+        <div className="mb-10">
+          <InkarnateProject />
+        </div>
+
+        <div className="mb-10">
+          <WordcloudyProject />
+        </div>
+      </section>
+
+      <section className="mt-12">
+        <h2 className="text-3xl mb-6">Recent Notes</h2>
+        {posts.map(({ node }, index) => {
+          let title = node.frontmatter.title || node.fields.slug
+
+          return (
+            <BlogEntryShort
+              key={node.fields.slug}
+              to={node.fields.slug}
+              title={title}
+              description={node.frontmatter.description}
+              date={node.frontmatter.date}
+            />
+          )
+        })}
       </section>
     </Layout>
   )
