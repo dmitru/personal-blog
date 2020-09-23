@@ -3,7 +3,6 @@ import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { FaGithub, FaLink, FaShare } from "react-icons/fa"
 import { InkarnateProject } from "../components/projects/inkarnate"
 import { WordcloudyProject } from "../components/projects/wordcloudy"
 
@@ -62,11 +61,6 @@ const BlogIndex = ({ data, location }) => {
       <section className="mt-10">
         <div className="mb-6">
           <h2 className="text-3xl mb-0 inline-block">Featured Projects</h2>
-
-          <Link to="/projects" className="inline-flex items-center ml-5">
-            See all projects
-            <ArrowIcon />
-          </Link>
         </div>
 
         <div className="mb-10">
@@ -76,6 +70,11 @@ const BlogIndex = ({ data, location }) => {
         <div className="mb-10">
           <WordcloudyProject />
         </div>
+
+        <Link to="/projects" className="inline-flex items-center mb-6 text-xl">
+          See all projects
+          <ArrowIcon />
+        </Link>
       </section>
 
       <section className="mt-12 max-w-xl">
@@ -97,13 +96,6 @@ const BlogIndex = ({ data, location }) => {
     </Layout>
   )
 }
-
-const Project = ({ title, children }) => (
-  <article className="mb-4">
-    <h3 className="text-base text-gray-900 mb-2 font-semibold">{title}</h3>
-    <div className="text-sm">{children}</div>
-  </article>
-)
 
 const BlogEntryShort = ({ to, title, description }) => (
   <article className="mb-4">

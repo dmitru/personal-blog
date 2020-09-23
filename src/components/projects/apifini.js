@@ -95,22 +95,18 @@ export const ApifiniProject = () => {
         {/* My roles */}
         <SwiperSlide>
           <div className=" mx-12 lg:mx-24 my-10">
-            <h3 className="text-4xl  inline-block mr-4  mt-0 mb-0">My roles</h3>
-            <p className="text-lg max-w-xl">
-              It's my pet project, where I did everything myself – from product
-              and UX design to implementing and deploying a complete SaaS
-              product.
-            </p>
-
-            <p className="text-lg">A few highlights:</p>
-            <ul className="text-lg max-w-lg">
+            <h3 className="text-4xl  inline-block mr-4  mt-0 mb-0">My work</h3>
+            <ul className="text-lg max-w-xl">
               <li>
-                Reverse-engineered a few existing solutions, figured out a good
-                greedy algorithm to fill the shape with words
+                Collaborated with the start-up owner to design and create an
+                MVP.
               </li>
               <li>
-                Efficiently implemented this algorithm in Rust / WebAssembly
-                running in a WebWorker to keep the UI responsive.
+                Led a small remote front-end team, onboarding and mentoring.
+              </li>
+              <li>
+                I was doing full-stack development as well as helping with
+                product design, UX, API and data model.
               </li>
             </ul>
           </div>

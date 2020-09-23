@@ -107,20 +107,23 @@ export const SmarketsProject = () => {
           <div className=" mx-12 lg:mx-24 my-10">
             <h3 className="text-4xl  inline-block mr-4  mt-0 mb-0">My roles</h3>
             <p className="text-lg max-w-xl">
-              It's my pet project, where I did everything myself – from product
-              and UX design to implementing and deploying a complete SaaS
-              product.
+              Worked full-time in a mid-size (~30 employees) London-based
+              company as a frontend engineer, helping them scale up and migrate
+              to a new version of their real-time web app.
             </p>
 
             <p className="text-lg">A few highlights:</p>
             <ul className="text-lg max-w-lg">
               <li>
-                Reverse-engineered a few existing solutions, figured out a good
-                greedy algorithm to fill the shape with words
+                Implemented dark/light color themes for an existing large
+                codebase
               </li>
               <li>
-                Efficiently implemented this algorithm in Rust / WebAssembly
-                running in a WebWorker to keep the UI responsive.
+                Significantly improved server-rendering speed and page load time
+              </li>
+              <li>
+                Closely collaborated with other teams to ship new user-facing
+                features
               </li>
             </ul>
           </div>

@@ -140,7 +140,7 @@ export const WordcloudyProject = () => {
         {/* My roles */}
         <SwiperSlide>
           <div className=" mx-12 lg:mx-24 my-10">
-            <h3 className="text-4xl  inline-block mr-4  mt-0 mb-0">My roles</h3>
+            <h3 className="text-4xl  inline-block mr-4  mt-0 mb-0">My role</h3>
             <p className="text-lg max-w-xl">
               It's my pet project, where I did everything myself – from product
               and UX design to implementing and deploying a complete SaaS

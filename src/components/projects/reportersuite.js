@@ -1,8 +1,7 @@
 import { graphql, useStaticQuery } from "gatsby"
 import React from "react"
 import "react-bnb-gallery/dist/style.css"
-import { FaFacebook, FaLink, FaReddit } from "react-icons/fa"
-import ReactPlayer from "react-player"
+import { FaLink } from "react-icons/fa"
 import SwiperCore, {
   A11y,
   Navigation,
@@ -97,11 +96,14 @@ export const ReporterSuiteProject = () => {
               <h2 className="text-5xl inline-block mr-4 mt-0 mb-0">
                 Reporter Suite
               </h2>
-              <p className="text-xl">SaaS toolset for US court reporters.</p>
+              <p className="text-xl">
+                A complete SaaS toolset for state and freelance court reporters
+                in the US.
+              </p>
               <p className="mt-8 mb-2">
                 <strong>My roles:</strong> <br />
-                Front-end development, back-end, infrastructure and cloud
-                deployment.
+                UX design, front-end development, back-end, infrastructure and
+                cloud deployment.
               </p>
               <p className="mt-0">
                 <strong>Tech stack:</strong> <br />
@@ -135,20 +137,20 @@ export const ReporterSuiteProject = () => {
           <div className=" mx-12 lg:mx-24 my-10">
             <h3 className="text-4xl  inline-block mr-4  mt-0 mb-0">My roles</h3>
             <p className="text-lg max-w-xl">
-              It's my pet project, where I did everything myself – from product
-              and UX design to implementing and deploying a complete SaaS
-              product.
+              I was hired to help rewrite an MVP with a few thousand existing
+              users, maintain the project and extend it with many new features.
             </p>
 
-            <p className="text-lg">A few highlights:</p>
+            <p className="text-lg">Highlights:</p>
             <ul className="text-lg max-w-lg">
               <li>
-                Reverse-engineered a few existing solutions, figured out a good
-                greedy algorithm to fill the shape with words
+                Took care of complete development and cloud deployment of the
+                new platform.
               </li>
+              <li>Migrated a few thousands user accounts to the new app.</li>
               <li>
-                Efficiently implemented this algorithm in Rust / WebAssembly
-                running in a WebWorker to keep the UI responsive.
+                Added support for sharable invoice pages, with PDF generation
+                and Stripe payments.
               </li>
             </ul>
           </div>
